@@ -1,0 +1,216 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: cursive, Arial, Helvectica;
+}
+
+.player{
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper{
+    border: 2px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 30px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #dddddd;
+    width: 35%;
+    height: 98%; 
+    position: relative;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.track-art{
+    margin: 25px;
+    height: 175px;
+    width: 175px;
+    border: 2px solid #fff;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0px 6px 5px black;
+}
+
+.now-playing {
+    font-size: 1rem;
+}
+    
+.track-name {
+font-size: 2.0rem;
+}
+
+.track-artist {
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    position: absolute;
+    bottom: 50px;
+    left: 15%;
+}
+
+.repeat-track,
+.random-track,
+.playpause-track,
+.prev-track,
+.next-track {
+    padding: 15px;
+    transition: opacity .2s;
+}
+
+.repeat-track:hover,
+.random-track:hover,
+.prev-track:hover,
+.next-track:hover {
+    opacity: 1.0;
+    background-color: #cccccc;
+    border-radius: 50%;
+}
+.playpause-track:hover{
+    opacity: 0.5;
+}
+.seek-slider, .volume-slider{
+    appearance: none;
+    height: 5px;
+    background: #83a9ff;
+    border-radius: 10px;
+    transition: opacity .2s;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.seek-slider, .volume-slider {
+    appearance: none;
+    height: 5px;
+    background: #83A9FF;
+    transition: opacity .2s;
+}
+    
+.seek-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+width: 15px;
+height: 15px;
+background: white;
+border: 3px solid #3774FF;
+cursor: grab;
+border-radius: 100%;
+}
+    
+.seek-slider:hover,
+.volume-slider:hover {
+opacity: 1.0;
+}
+
+.seek-slider {
+width: 60%;
+}
+
+.volume-slider {
+width: 30%;
+}
+
+
+.current-time,
+.total-duration {
+padding: 10px;
+}
+
+
+i.fa-volume-down,
+i.fa-volume-up {
+padding: 10px;
+}
+
+i,
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward,
+p {
+cursor: pointer;
+}
+.randomActive{
+    color: black;
+}
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+.loader {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader .stroke{
+    background: #f1f1f1;
+    height: 150%;
+    width: 10px;
+    border-radius: 50px;
+    margin: 0 5px;
+    animation: animate 1.4s linear infinite;
+}
+  @keyframes animate {
+    50% {
+      height: 20%;
+      background: #4286f4;
+    }
+
+    100% {
+      background: #4286f4;
+      height: 100%;
+    }
+  }
+  .stroke:nth-child(1){
+      animation-delay: 0s;
+  }
+  .stroke:nth-child(2){
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(3){
+    animation-delay: 0.6s;
+}
+.stroke:nth-child(4){
+    animation-delay: 0.9s;
+}
+.stroke:nth-child(5){
+    animation-delay: 0.6s;
+}
+.stroke:nth-child(6){
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(7){
+    animation-delay: 0s;
+}
