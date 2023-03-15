@@ -5,10 +5,18 @@
 
 body{
     font-family: cursive, Arial, Helvectica;
+    font-weight: bold;
+}
+
+.title{
+    color: red;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 20px;
 }
 
 .player{
-    height: 95vh;
+    height: 85vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -45,25 +53,29 @@ body{
 
 .now-playing {
     font-size: 1rem;
+    margin: -15px 0px;
 }
     
 .track-name {
-font-size: 2.0rem;
+    font-size: 1.7rem;
+    margin-top: -5px;
+    text-align: center;
+    word-break: break-word;
+
 }
 
 .track-artist {
     margin-top: 5px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .buttons{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 5px;
     position: absolute;
-    bottom: 50px;
     left: 15%;
+    bottom: %;
 }
 
 .repeat-track,
@@ -71,8 +83,8 @@ font-size: 2.0rem;
 .playpause-track,
 .prev-track,
 .next-track {
-    padding: 15px;
     transition: opacity .2s;
+    padding: 15px;
 }
 
 .repeat-track:hover,
@@ -81,7 +93,6 @@ font-size: 2.0rem;
 .next-track:hover {
     opacity: 1.0;
     background-color: #cccccc;
-    border-radius: 50%;
 }
 .playpause-track:hover{
     opacity: 0.5;
@@ -99,6 +110,7 @@ font-size: 2.0rem;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-top: -5px;
 }
 
 .seek-slider, .volume-slider {
@@ -113,8 +125,8 @@ font-size: 2.0rem;
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
-width: 15px;
-height: 15px;
+width: 10px;
+height: 10px;
 background: white;
 border: 3px solid #3774FF;
 cursor: grab;
@@ -160,6 +172,7 @@ cursor: pointer;
 .rotate {
     animation: rotation 8s infinite linear;
 }
+
 @keyframes rotation {
     from {
       transform: rotate(0deg);
@@ -168,12 +181,14 @@ cursor: pointer;
       transform: rotate(359deg);
     }
 }
+
 .loader {
   height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .loader .stroke{
     background: #f1f1f1;
     height: 150%;
@@ -182,35 +197,36 @@ cursor: pointer;
     margin: 0 5px;
     animation: animate 1.4s linear infinite;
 }
-  @keyframes animate {
-    50% {
-      height: 20%;
-      background: #4286f4;
-    }
 
-    100% {
-      background: #4286f4;
-      height: 100%;
-    }
-  }
-  .stroke:nth-child(1){
-      animation-delay: 0s;
-  }
-  .stroke:nth-child(2){
-    animation-delay: 0.3s;
+@keyframes animate {
+50% {
+    height: 20%;
+    background: #4286f4;
+}
+
+100% {
+    background: #4286f4;
+    height: 100%;
+}
+}
+.stroke:nth-child(1){
+    animation-delay: 0s;
+}
+.stroke:nth-child(2){
+animation-delay: 0.3s;
 }
 .stroke:nth-child(3){
-    animation-delay: 0.6s;
+animation-delay: 0.6s;
 }
 .stroke:nth-child(4){
-    animation-delay: 0.9s;
+animation-delay: 0.9s;
 }
 .stroke:nth-child(5){
-    animation-delay: 0.6s;
+animation-delay: 0.6s;
 }
 .stroke:nth-child(6){
-    animation-delay: 0.3s;
+animation-delay: 0.3s;
 }
 .stroke:nth-child(7){
-    animation-delay: 0s;
+animation-delay: 0s;
 }
