@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link rel="shortcut icon" href="poster/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>MTP Music Player</title>
 </head>
 <body>
-    <div class="title">A Music Player For Sky</div>
+    <!-- <div class="title">A Music Player For Sky</div> -->
     <div class="player">
         <div class="wrapper">
             <!--Song information-->
@@ -23,14 +22,15 @@
             </div>
             <!--Slide container 1-->
             <div class="slide-container">
-                <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek-slider" onchange="seekto()">
+                <div class="current-time">00:0</div>
+                <input type="range" name="foo" min="1" max="100" value="0" class="seek-slider" onchange="seekto()">
+                <output class="bubble"></output>
                 <div class="total-duration">00:00</div>
             </div>
             <!--Slide container 2-->
             <div class="slide-container">
                 <i class="fa fa-volume-down"></i>
-                <input type= "range" min="1" max="100" value="95" class="volume-slider" onchange="set_volume()">
+                <input type= "range" min="1" max="100" value="100" class="volume-slider" onchange="set_volume()">
                 <i class="fa fa-volume-up"></i>
             </div>
             <!--Buttons-->
@@ -39,13 +39,13 @@
                     <i class="fas fa-random fa-2x" title="random"></i>
                 </div>
                 <div class="prev-track" onclick="prevTrack()">
-                     <i class="fa fa-step-backward fa-2x"></i>
+                     <i class="fa fa-step-backward fa-3x"></i>
                  </div>
                  <div class="playpause-track" onclick="playpauseTrack()">
-                     <i class="fa fa-play-circle fa-5x"></i>
+                     <i class="fa fa-play-circle fa-3x"></i>
                  </div>
                  <div class="next-track" onclick="nextTrack()">
-                     <i class="fa fa-step-forward fa-2x"></i>
+                     <i class="fa fa-step-forward fa-3x"></i>
                  </div>
                  <div class="repeat-track" onclick="repeatTrack()">
                      <i class="fa fa-repeat fa-2x" title="repeat"></i>
@@ -62,5 +62,6 @@
              </div>  
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

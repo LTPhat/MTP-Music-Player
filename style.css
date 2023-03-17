@@ -8,15 +8,9 @@ body{
     font-weight: bold;
 }
 
-.title{
-    color: red;
-    text-align: center;
-    font-size: 1.8rem;
-    padding: 20px;
-}
 
 .player{
-    height: 85vh;
+    height: 98vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,11 +18,11 @@ body{
 }
 
 .wrapper{
-    border: 2px solid transparent;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 30px;
+    /* border: 2px solid transparent; */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 40px;
     padding: 30px;
     border-radius: 20px;
-    background-color: #dddddd;
+    background: #dddddd;
     width: 35%;
     height: 98%; 
     position: relative;
@@ -42,8 +36,8 @@ body{
 }
 .track-art{
     margin: 25px;
-    height: 175px;
-    width: 175px;
+    height: 200px;
+    width: 200px;
     border: 2px solid #fff;
     background-size: cover;
     background-position: center;
@@ -52,8 +46,9 @@ body{
 }
 
 .now-playing {
-    font-size: 1rem;
-    margin: -15px 0px;
+    font-size: 1.2rem;
+    margin: -10px 5px;    
+    font-style: italic;
 }
     
 .track-name {
@@ -73,9 +68,8 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: absolute;
-    left: 15%;
-    bottom: %;
+    justify-content: center;
+    gap: 2%;
 }
 
 .repeat-track,
@@ -93,13 +87,14 @@ body{
 .next-track:hover {
     opacity: 1.0;
     background-color: #cccccc;
+    border-radius: 10px;
 }
 .playpause-track:hover{
     opacity: 0.5;
 }
 .seek-slider, .volume-slider{
     appearance: none;
-    height: 5px;
+    height: 8px;
     background: #83a9ff;
     border-radius: 10px;
     transition: opacity .2s;
@@ -110,7 +105,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-top: -5px;
+    margin-top: 5px;
 }
 
 .seek-slider, .volume-slider {
@@ -125,10 +120,10 @@ body{
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
-width: 10px;
-height: 10px;
-background: white;
-border: 3px solid #3774FF;
+width: 15px;
+height: 15px;
+background: yellow;
+border: 4px solid #1d2c4f;
 cursor: grab;
 border-radius: 100%;
 }
@@ -166,9 +161,11 @@ i.fa-step-backward,
 p {
 cursor: pointer;
 }
+
 .randomActive{
-    color: black;
+    color: green;
 }
+
 .rotate {
     animation: rotation 8s infinite linear;
 }
@@ -183,15 +180,17 @@ cursor: pointer;
 }
 
 .loader {
-  height: 70px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 15px auto;
+
 }
 
 .loader .stroke{
-    background: #f1f1f1;
-    height: 150%;
+    background: linear-gradient(to bottom , #e66210, #e6a629);
+    height: 50%;
     width: 10px;
     border-radius: 50px;
     margin: 0 5px;
@@ -201,12 +200,12 @@ cursor: pointer;
 @keyframes animate {
 50% {
     height: 20%;
-    background: #4286f4;
+    background: linear-gradient(to bottom, #e66210, #e6a629);
 }
 
 100% {
-    background: #4286f4;
-    height: 100%;
+    background: linear-gradient(to bottom, #e6a629, #e66210);
+    height: 150%;
 }
 }
 .stroke:nth-child(1){
