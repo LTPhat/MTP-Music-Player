@@ -398,11 +398,17 @@ function prevTrack(){
     if (isRepeat){
         loadTrack(track_index);
     }else{
-        if(track_index > 0){
-            track_index -= 1;
+        if (isRandom){
+            let random_index = Math.round(Math.random() * (music_list.length - 1));;
+            track_index = random_index;
         }else{
-            track_index = music_list.length -1;
+            if(track_index > 0){
+                track_index -= 1;
+            }else{
+                track_index = music_list.length - 1;
+            }
         }
+        loadTrack(track_index);
     }
     playTrack();
 }
