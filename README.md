@@ -1,7 +1,7 @@
 # MTP Music Player
 
 - Music Player for SKY :)) 
-- Something I've been doing while learning HTML, CSS and Vanila Javascript.
+- Something I do while learning HTML, CSS and Vanila Javascript.
 
 
 ## Some UI design capture images:
