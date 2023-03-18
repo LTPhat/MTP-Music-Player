@@ -3,8 +3,14 @@
 - Music Player for SKY :)) 
 - Something I've been doing while learning HTML, CSS and Vanila Javascript.
 
-## Layout UI design example
 
-Muộn rồi mà sao còn         |  Chúng ta của hiện tại
+## Some UI design capture images:
+
+Muộn Rồi Mà Sao Còn       |  Chúng Ta Của Hiện Tại
 :-------------------------:|:-------------------------:
 ![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap1.png)  |![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap2.png)
+
+
+Chạy Ngay Đi        |  Có Chắc Yêu Là Đây
+:-------------------------:|:-------------------------:
+![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap4.png)  |![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap3.png)
