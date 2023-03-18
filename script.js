@@ -235,9 +235,9 @@ function loadTrack(track_index){
 
     // Update time
     // updateTimer = setInterval(setUpdate, 100);
-    curr_track.addEventListener('ended', nextTrack);
-    load_bg();
-    bgTimer = setInterval(load_bg, 30000);
+    // curr_track.addEventListener('ended', nextTrack);
+    // load_bg();
+    // bgTimer = setInterval(load_bg, 30000);
 }
 
 // Play song
@@ -249,7 +249,6 @@ function playTrack(){
     track_art.classList.add('rotate');
     wave.classList.add('loader');
     timeDelay = [0, 0.3, 0.6, 0.9, 0.6, 0.3, 0];
-    // let angle = 'to right'
     playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-4x"></i>';
 }
 
@@ -376,8 +375,10 @@ function nextTrack(){
         track_index = 0;
     }
     loadTrack(track_index);
-    // playTrack();
-    curr_track.play();
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-4x"></i>';
+    playTrack();
+    changeStroke_color();
+    strokeTimer = setInterval(changeStroke_color, 3000);
 }
 
 
@@ -395,10 +396,8 @@ function prevTrack(){
 
 
 
-
-// test
-loadTrack(6)
+loadTrack(19)
 playTrack();
-changeStroke_color();
-strokeTimer = setInterval(changeStroke_color, 3000);
-console.log(isRandom);
+curr_track.addEventListener('ended', nextTrack);
+load_bg();
+bgTimer = setInterval(load_bg, 30000);
