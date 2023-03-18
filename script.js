@@ -205,13 +205,14 @@ function load_bg(){
 
 
 function changeStroke_color(){
-    main_color = ['#09e811', '#e83fd4', '#cf0808','#575151','#14dbdb', '#6f07e6', '#0261e6', '#c4e009', '#0e0f0e', '#d0ff00']
-    add_color = ['#05850a', '#612159','#7d0505','#a19c9c', '#1c8787', '#34026e', '#063e8c', '#627004', '#778077', '#6d8505']
+    main_color = ['#09e811','#104010','#c70c6d', '#e83fd4', '#cf0808','#575151','#14dbdb', '#6f07e6', '#0261e6', '#c4e009', '#0e0f0e', '#d0ff00']
+    add_color = ['#05850a', '#1b7d1b','#590a33', '#612159','#7d0505','#a19c9c', '#1c8787', '#34026e', '#063e8c', '#627004', '#778077', '#6d8505']
     let index = Math.round(Math.random() * main_color.length);
     let first_color = main_color[index];
     let second_color = add_color[index];
     let angle = 'to bottom';
     let to_bottom_gradient = 'linear-gradient('+ angle + ',' + first_color + ',' + second_color +')';
+    let timeDelay = [0, 0.3, 0.6, 0.9, 0.6, 0.3, 0];
     for (let i = 0; i < 7; i++){
         stroke[i].style.animation = 'animate 1.4s linear infinite';
         stroke[i].style.animationDelay = timeDelay[i] + 's';
@@ -245,7 +246,6 @@ function playTrack(){
     isPlaying = true;
     track_art.classList.add('rotate');
     wave.classList.add('loader');
-    timeDelay = [0, 0.3, 0.6, 0.9, 0.6, 0.3, 0];
     playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-4x"></i>';
 }
 
@@ -413,6 +413,7 @@ function main(){
     loadTrack(track_index);
     playTrack();
     curr_track.addEventListener('ended', nextTrack);
+    let strokeTimer = setTimeout(changeStroke_color, 100);
     load_bg();
     bgTimer = setInterval(load_bg, 10000); // Change background after 10s
 }
