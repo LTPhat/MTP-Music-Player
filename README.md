@@ -4,7 +4,7 @@
 - Something I do while learning HTML, CSS and Vanila Javascript.
 
 
-## Some UI design capture images:
+## Some UI design capture images
 
 Muộn Rồi Mà Sao Còn       |  Chúng Ta Của Hiện Tại
 :-------------------------:|:-------------------------:
