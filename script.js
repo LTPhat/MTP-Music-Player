@@ -161,6 +161,7 @@ let track_artist = document.querySelector('.track-artist');
 let playpause_btn = document.querySelector('.playpause-track');
 let next_btn = document.querySelector('.next-track');
 let prev_btn = document.querySelector('.prev-track');
+let repeat_btn = document.querySelector('.repeat-track');
 let wrapper = document.querySelector('.wrapper');
 let seek_slider = document.querySelector('.seek-slider');
 let volume_slider = document.querySelector('.volume-slider');
@@ -178,7 +179,7 @@ let isRandom = false;
 let updateTimer;
 let bgTimer;
 let strokeTimer;
-
+let isRepeat = false;
 // Function to change color
 
 function load_bg(){
@@ -273,17 +274,12 @@ function set_volume(){
 // Play/Pause
 
 function playpauseTrack(){
-    if (isPlaying && playingFirst){
-        clearInterval(strokeTimer);
-        playingFirst = false;
-        pauseTrack();
-    }
     if (isPlaying){
-        clearInterval(strokeTimer);
         pauseTrack();
-    }
-    else{
-        changeStroke_color()
+        clearInterval(strokeTimer);
+        console.log("done");
+    }else{
+        setTimeout(changeStroke_color, 100);
         strokeTimer = setInterval(changeStroke_color, 3000);
         playTrack();
     }
@@ -327,8 +323,8 @@ function pauseRandom(){
 }
 
 function repeatTrack(){
-    let curr_track = track_index;
-    playTrack();
+    repeat_btn.classList.add('randomActive');
+    isRepeat = true;
 }
 
 
@@ -364,21 +360,22 @@ function setUpdate(){
 
 // Next track
 function nextTrack(){
-    if (track_index < music_list.length - 1){
-        if (isRandom){
-            let random_index = Number.parseInt(Math.random * music_list.length);
-            track_index = random_index;
-        }else{
-            track_index += 1;
-        }
+    if (isRepeat){
+        loadTrack(track_index);
     }else{
-        track_index = 0;
+        if (track_index < music_list.length - 1){
+            if (isRandom){
+                let random_index = Number.parseInt(Math.random * music_list.length);
+                track_index = random_index;
+            }else{
+                track_index += 1;
+            }
+        }else{
+            track_index = 0;
+        }
+        loadTrack(track_index);
     }
-    loadTrack(track_index);
-    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-4x"></i>';
     playTrack();
-    changeStroke_color();
-    strokeTimer = setInterval(changeStroke_color, 3000);
 }
 
 
