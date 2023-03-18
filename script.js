@@ -161,6 +161,7 @@ let track_artist = document.querySelector('.track-artist');
 let playpause_btn = document.querySelector('.playpause-track');
 let next_btn = document.querySelector('.next-track');
 let prev_btn = document.querySelector('.prev-track');
+let repeat_btn = document.querySelector('.repeat-track');
 let wrapper = document.querySelector('.wrapper');
 let seek_slider = document.querySelector('.seek-slider');
 let volume_slider = document.querySelector('.volume-slider');
@@ -172,14 +173,15 @@ let curr_track = document.createElement('audio');
 let stroke = document.getElementsByClassName('stroke');
 
 let playingFirst = true;
-let track_index = 0;
+let track_index = Math.round(Math.random() * (music_list.length - 1));
 let isPlaying = true;
 let isRandom = false;
 let updateTimer;
 let bgTimer;
 let strokeTimer;
+let isRepeat = false;
 
-// Function to change color
+// Change color randomly for background and wave
 
 function load_bg(){
     function random_color(hex_code){
@@ -233,11 +235,6 @@ function loadTrack(track_index){
     track_name.textContent = music_list[track_index].name;
     now_playing.textContent = "Playing track " + (track_index + 1) + " of " + music_list.length;
 
-    // Update time
-    // updateTimer = setInterval(setUpdate, 100);
-    curr_track.addEventListener('ended', nextTrack);
-    load_bg();
-    bgTimer = setInterval(load_bg, 30000);
 }
 
 // Play song
@@ -249,12 +246,11 @@ function playTrack(){
     track_art.classList.add('rotate');
     wave.classList.add('loader');
     timeDelay = [0, 0.3, 0.6, 0.9, 0.6, 0.3, 0];
-    // let angle = 'to right'
     playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-4x"></i>';
 }
 
 
-// Function to change time and volume
+// Change time and volume 
 
 function seekto(){
     clearInterval(updateTimer);
@@ -274,17 +270,12 @@ function set_volume(){
 // Play/Pause
 
 function playpauseTrack(){
-    if (isPlaying && playingFirst){
-        clearInterval(strokeTimer);
-        playingFirst = false;
-        pauseTrack();
-    }
     if (isPlaying){
-        clearInterval(strokeTimer);
         pauseTrack();
-    }
-    else{
-        changeStroke_color()
+        clearInterval(strokeTimer);
+        console.log("done");
+    }else{
+        setTimeout(changeStroke_color, 100);
         strokeTimer = setInterval(changeStroke_color, 3000);
         playTrack();
     }
@@ -318,6 +309,10 @@ function randomTrack(){
 }
 
 function playRandom(){
+    if (isRepeat){
+        isRepeat = false;
+        repeat_btn.classList.remove('randomActive');
+    }
     isRandom = true;
     randomIcon.classList.add('randomActive');
 }
@@ -327,12 +322,24 @@ function pauseRandom(){
     randomIcon.classList.remove('randomActive');
 }
 
+
+// repeatTrack when clicking repeat_btn
+
 function repeatTrack(){
-    let curr_track = track_index;
-    playTrack();
+    if (isRandom){
+        isRandom = false;
+        randomIcon.classList.remove('randomActive');
+    }
+    if (isRepeat){
+        isRepeat = false;
+        repeat_btn.classList.remove('randomActive');
+    }else{
+        repeat_btn.classList.add('randomActive');
+        isRepeat = true;
+    }
 }
 
-
+// Update time during playing track
 
 function setUpdate(){
     let position = 0;
@@ -364,41 +371,50 @@ function setUpdate(){
 }
 
 // Next track
-function nextTrack(){
-    if (track_index < music_list.length - 1){
-        if (isRandom){
-            let random_index = Number.parseInt(Math.random * music_list.length);
-            track_index = random_index;
-        }else{
-            track_index += 1;
-        }
-    }else{
-        track_index = 0;
-    }
-    loadTrack(track_index);
-    // playTrack();
-    curr_track.play();
-}
 
+function nextTrack(){
+    if (isRepeat){
+        loadTrack(track_index);
+        playTrack();
+    }else{
+        if (track_index < music_list.length - 1){
+            if (isRandom){
+                let random_index = Math.round(Math.random() * (music_list.length - 1));;
+                track_index = random_index;
+            }else{
+                track_index += 1;
+            }
+        }else{
+            track_index = 0;
+        }
+        loadTrack(track_index);
+        playTrack();
+    }
+}
 
 // Previous track
 
 function prevTrack(){
-    if(track_index > 0){
-        track_index -= 1;
+    if (isRepeat){
+        loadTrack(track_index);
     }else{
-        track_index = music_list.length -1;
+        if(track_index > 0){
+            track_index -= 1;
+        }else{
+            track_index = music_list.length -1;
+        }
     }
-    loadTrack(track_index);
     playTrack();
 }
 
 
 
+function main(){
+    loadTrack(track_index);
+    playTrack();
+    curr_track.addEventListener('ended', nextTrack);
+    load_bg();
+    bgTimer = setInterval(load_bg, 5000);
+}
 
-// test
-loadTrack(6)
-playTrack();
-changeStroke_color();
-strokeTimer = setInterval(changeStroke_color, 3000);
-console.log(isRandom);
+main();

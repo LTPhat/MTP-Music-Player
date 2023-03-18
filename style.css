@@ -42,8 +42,42 @@ body{
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    box-shadow: 0px 6px 5px black;
+    box-shadow: 5px 6px 5px linear-gradient(-45deg, #45caff 0%, #ff1b6b 100% );
 }
+
+.track-art::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100% );
+    transform: translate3d(0px, 20px, 0) scale(0.95);
+    filter: blur(20px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.track-art::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+        
 
 .now-playing {
     font-size: 1.2rem;
@@ -81,6 +115,7 @@ body{
 .next-track {
     transition: opacity .2s;
     padding: 15px;
+    font-weight: 1000;
 }
 
 .repeat-track:hover,
