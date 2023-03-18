@@ -275,7 +275,7 @@ function playpauseTrack(){
         clearInterval(strokeTimer);
         console.log("done");
     }else{
-        setTimeout(changeStroke_color, 100);
+        setTimeout(changeStroke_color, 100); // Show change bg immediately after clicking button
         strokeTimer = setInterval(changeStroke_color, 3000);
         playTrack();
     }
@@ -414,7 +414,7 @@ function main(){
     playTrack();
     curr_track.addEventListener('ended', nextTrack);
     load_bg();
-    bgTimer = setInterval(load_bg, 5000);
+    bgTimer = setInterval(load_bg, 10000); // Change background after 10s
 }
 
 main();
