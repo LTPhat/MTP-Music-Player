@@ -173,14 +173,15 @@ let curr_track = document.createElement('audio');
 let stroke = document.getElementsByClassName('stroke');
 
 let playingFirst = true;
-let track_index = 0;
+let track_index = Math.round(Math.random() * (music_list.length - 1));
 let isPlaying = true;
 let isRandom = false;
 let updateTimer;
 let bgTimer;
 let strokeTimer;
 let isRepeat = false;
-// Function to change color
+
+// Change color randomly for background and wave
 
 function load_bg(){
     function random_color(hex_code){
@@ -234,11 +235,6 @@ function loadTrack(track_index){
     track_name.textContent = music_list[track_index].name;
     now_playing.textContent = "Playing track " + (track_index + 1) + " of " + music_list.length;
 
-    // Update time
-    // updateTimer = setInterval(setUpdate, 100);
-    // curr_track.addEventListener('ended', nextTrack);
-    // load_bg();
-    // bgTimer = setInterval(load_bg, 30000);
 }
 
 // Play song
@@ -254,7 +250,7 @@ function playTrack(){
 }
 
 
-// Function to change time and volume
+// Change time and volume 
 
 function seekto(){
     clearInterval(updateTimer);
@@ -313,6 +309,10 @@ function randomTrack(){
 }
 
 function playRandom(){
+    if (isRepeat){
+        isRepeat = false;
+        repeat_btn.classList.remove('randomActive');
+    }
     isRandom = true;
     randomIcon.classList.add('randomActive');
 }
@@ -322,12 +322,24 @@ function pauseRandom(){
     randomIcon.classList.remove('randomActive');
 }
 
+
+// repeatTrack when clicking repeat_btn
+
 function repeatTrack(){
-    repeat_btn.classList.add('randomActive');
-    isRepeat = true;
+    if (isRandom){
+        isRandom = false;
+        randomIcon.classList.remove('randomActive');
+    }
+    if (isRepeat){
+        isRepeat = false;
+        repeat_btn.classList.remove('randomActive');
+    }else{
+        repeat_btn.classList.add('randomActive');
+        isRepeat = true;
+    }
 }
 
-
+// Update time during playing track
 
 function setUpdate(){
     let position = 0;
@@ -359,13 +371,15 @@ function setUpdate(){
 }
 
 // Next track
+
 function nextTrack(){
     if (isRepeat){
         loadTrack(track_index);
+        playTrack();
     }else{
         if (track_index < music_list.length - 1){
             if (isRandom){
-                let random_index = Number.parseInt(Math.random * music_list.length);
+                let random_index = Math.round(Math.random() * (music_list.length - 1));;
                 track_index = random_index;
             }else{
                 track_index += 1;
@@ -374,28 +388,33 @@ function nextTrack(){
             track_index = 0;
         }
         loadTrack(track_index);
+        playTrack();
     }
-    playTrack();
 }
-
 
 // Previous track
 
 function prevTrack(){
-    if(track_index > 0){
-        track_index -= 1;
+    if (isRepeat){
+        loadTrack(track_index);
     }else{
-        track_index = music_list.length -1;
+        if(track_index > 0){
+            track_index -= 1;
+        }else{
+            track_index = music_list.length -1;
+        }
     }
-    loadTrack(track_index);
     playTrack();
 }
 
 
 
-loadTrack(19)
-playTrack();
-curr_track.addEventListener('ended', nextTrack);
-load_bg();
-bgTimer = setInterval(load_bg, 30000);
-//
+function main(){
+    loadTrack(track_index);
+    playTrack();
+    curr_track.addEventListener('ended', nextTrack);
+    load_bg();
+    bgTimer = setInterval(load_bg, 5000);
+}
+
+main();
