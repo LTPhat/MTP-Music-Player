@@ -36,6 +36,12 @@ export const music_list = [
         music : 'music/ChacAiDoSeVeNewVersion-SonTungMTP-3698905.mp3'
     },
     {
+        img : 'poster/CND.png',
+        name : 'Chạy Ngay Đi',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/chayngaydi.mp3'
+    },
+    {
         img : 'poster/CTCHT.jpg',
         name : 'Chúng Ta Của Hiện Tại',
         artist : 'Sơn Tùng M-TP',
@@ -70,6 +76,12 @@ export const music_list = [
         name : 'Hãy Trao Cho Anh',
         artist : 'Sơn Tùng M-TP',
         music : 'music/HayTraoChoAnh-SonTungMTPSnoopDogg-6010660.mp3'
+    },
+    {
+        img : 'poster/KPDVD.jpg',
+        name : 'Không Phải Dạng Vừa Đâu',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/KhongPhaiDangVuaDau-SonTungMTP-3753840.mp3'
     },
     {
         img : 'poster/LT.jpg',

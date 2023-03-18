@@ -56,12 +56,14 @@ body{
     margin-top: -5px;
     text-align: center;
     word-break: break-word;
-
+    font-weight: 1500;
+    margin: 0 -30px;
 }
 
 .track-artist {
     margin-top: 5px;
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .buttons{
@@ -90,7 +92,8 @@ body{
     border-radius: 10px;
 }
 .playpause-track:hover{
-    opacity: 0.5;
+    opacity: 0.8;
+    color: red;
 }
 .seek-slider, .volume-slider{
     appearance: none;
@@ -126,6 +129,7 @@ background: yellow;
 border: 4px solid #1d2c4f;
 cursor: grab;
 border-radius: 100%;
+/* margin: 10px; */
 }
     
 .seek-slider:hover,

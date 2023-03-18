@@ -36,13 +36,19 @@ const music_list = [
         music : 'music/ChacAiDoSeVeNewVersion-SonTungMTP-3698905.mp3'
     },
     {
+        img : 'poster/CND.png',
+        name : 'Chạy Ngay Đi',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/chayngaydi.mp3'
+    },
+    {
         img : 'poster/CTCHT.jpg',
         name : 'Chúng Ta Của Hiện Tại',
         artist : 'Sơn Tùng M-TP',
         music : 'music/chungtacuahientai.mp3'
     },
     {
-        img : 'poster/CTKTVN.jpg',
+        img : 'poster/CTKTVN2.jpg',
         name : 'Chúng Ta Không Thuộc Về Nhau',
         artist : 'Sơn Tùng M-TP',
         music : 'music/ChungTaKhongThuocVeNhau-SonTungMTP-4528181.mp3'
@@ -70,6 +76,12 @@ const music_list = [
         name : 'Hãy Trao Cho Anh',
         artist : 'Sơn Tùng M-TP',
         music : 'music/HayTraoChoAnh-SonTungMTPSnoopDogg-6010660.mp3'
+    },
+    {
+        img : 'poster/KPDVD.jpg',
+        name : 'Không Phải Dạng Vừa Đâu',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/KhongPhaiDangVuaDau-SonTungMTP-3753840.mp3'
     },
     {
         img : 'poster/LT.jpg',
@@ -193,7 +205,7 @@ function load_bg(){
 function changeStroke_color(){
     main_color = ['#09e811', '#e83fd4', '#cf0808','#575151','#14dbdb', '#6f07e6', '#0261e6', '#c4e009', '#0e0f0e', '#d0ff00']
     add_color = ['#05850a', '#612159','#7d0505','#a19c9c', '#1c8787', '#34026e', '#063e8c', '#627004', '#778077', '#6d8505']
-    let index = Math.round(Math.random() * (main_color.length));
+    let index = Math.round(Math.random() * main_color.length);
     let first_color = main_color[index];
     let second_color = add_color[index];
     let angle = 'to bottom';
@@ -222,18 +234,17 @@ function loadTrack(track_index){
     now_playing.textContent = "Playing track " + (track_index + 1) + " of " + music_list.length;
 
     // Update time
-    updateTimer = setInterval(setUpdate, 100);
-    // curr_track.addEventListener('ended', nextTrack);
+    // updateTimer = setInterval(setUpdate, 100);
+    curr_track.addEventListener('ended', nextTrack);
     load_bg();
-    bgTimer = setInterval(load_bg, 1000);
-    clearInterval(bgTimer);
-    bgTimer = setInterval(load_bg, 60000);
+    bgTimer = setInterval(load_bg, 30000);
 }
 
 // Play song
 
 function playTrack(){
     curr_track.play();
+    updateTimer = setInterval(setUpdate, 100);
     isPlaying = true;
     track_art.classList.add('rotate');
     wave.classList.add('loader');
@@ -302,6 +313,10 @@ function reset(){
 
 // Random
 
+function randomTrack(){
+    isRandom? pauseRandom(): playRandom();
+}
+
 function playRandom(){
     isRandom = true;
     randomIcon.classList.add('randomActive');
@@ -348,8 +363,42 @@ function setUpdate(){
     }
 }
 
+// Next track
+function nextTrack(){
+    if (track_index < music_list.length - 1){
+        if (isRandom){
+            let random_index = Number.parseInt(Math.random * music_list.length);
+            track_index = random_index;
+        }else{
+            track_index += 1;
+        }
+    }else{
+        track_index = 0;
+    }
+    loadTrack(track_index);
+    // playTrack();
+    curr_track.play();
+}
+
+
+// Previous track
+
+function prevTrack(){
+    if(track_index > 0){
+        track_index -= 1;
+    }else{
+        track_index = music_list.length -1;
+    }
+    loadTrack(track_index);
+    playTrack();
+}
+
+
+
+
 // test
-loadTrack(20)
+loadTrack(6)
 playTrack();
 changeStroke_color();
 strokeTimer = setInterval(changeStroke_color, 3000);
+console.log(isRandom);
