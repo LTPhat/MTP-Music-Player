@@ -401,3 +401,4 @@ playTrack();
 curr_track.addEventListener('ended', nextTrack);
 load_bg();
 bgTimer = setInterval(load_bg, 30000);
+//
