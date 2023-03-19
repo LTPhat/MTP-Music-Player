@@ -159,7 +159,7 @@ const music_list = [
         img : 'poster/TBMHR.jpg',
         name : 'Thái Bình Mồ Hôi Rơi',
         artist : 'Sơn Tùng M-TP',
-        music : 'music/rememberme.mp3'
+        music : 'music/ThaiBinhMoHoiRoi-SonTungMTP-3775757.mp3'
     },
     {
         img : 'poster/TNOAA.jpg',
