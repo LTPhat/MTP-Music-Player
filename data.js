@@ -1,9 +1,15 @@
-export const music_list = [
+const music_list = [
     {
         img : 'poster/ATBE.jpg',
         name : 'Âm Thầm Bên Em',
         artist : 'Sơn Tùng M-TP',
         music : 'music/AmThamBenEm-SonTungMTP-4066476.mp3'
+    },
+    {
+        img : 'poster/ANNTGM.jpg',
+        name : 'Ấn Nút Nhớ Thả Giấc Mơ',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/AnNutNhoThaGiacMo.mp3'
     },
     {
         img : 'poster/ASR.jpg',
@@ -48,7 +54,7 @@ export const music_list = [
         music : 'music/chungtacuahientai.mp3'
     },
     {
-        img : 'poster/CTKTVN.jpg',
+        img : 'poster/CTKTVN2.jpg',
         name : 'Chúng Ta Không Thuộc Về Nhau',
         artist : 'Sơn Tùng M-TP',
         music : 'music/ChungTaKhongThuocVeNhau-SonTungMTP-4528181.mp3'
@@ -84,10 +90,22 @@ export const music_list = [
         music : 'music/KhongPhaiDangVuaDau-SonTungMTP-3753840.mp3'
     },
     {
+        img : 'poster/KMDT.jpg',
+        name : 'Khuôn Mặt Đáng Thương',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/KhuonMatDangThuong.mp3'
+    },
+    {
         img : 'poster/LT.jpg',
         name : 'Lạc Trôi',
         artist : 'Sơn Tùng M-TP',
         music : 'music/LacTroiTripleDRemix-SonTungMTP-5164670.mp3'
+    },
+    {
+        img : 'poster/LIYE.jpg',
+        name : 'Love In Your Eyes',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/LoveInYourEyes.mp3'
     },
     {
         img : 'poster/MMCD.jpg',
@@ -114,6 +132,12 @@ export const music_list = [
         music : 'music/NangAmNgangQua-SonTungMTP-8033251.mp3'
     },
     {
+        img : 'poster/NAXD.jpg',
+        name : 'Nắng Ấm Xa Dần',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/NangAmXaDanOnionnRemix-SonTungMTPOnionn-5947142.mp3'
+    },
+    {
         img : 'poster/NNHQ.jpg',
         name : 'Như Ngày Hôm Qua',
         artist : 'Sơn Tùng M-TP',
@@ -128,6 +152,12 @@ export const music_list = [
     {
         img : 'poster/RMBM.jpg',
         name : 'Remember Me',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/rememberme.mp3'
+    },
+    {
+        img : 'poster/TBMHR.jpg',
+        name : 'Thái Bình Mồ Hôi Rơi',
         artist : 'Sơn Tùng M-TP',
         music : 'music/rememberme.mp3'
     },
