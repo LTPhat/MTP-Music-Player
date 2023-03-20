@@ -223,7 +223,7 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px auto;
+  margin: 10px auto;
 
 }
 
@@ -244,7 +244,7 @@ cursor: pointer;
 
 100% {
     background: linear-gradient(to bottom, #e6a629, #e66210);
-    height: 150%;
+    height: 130%;
 }
 }
 .stroke:nth-child(1){
@@ -268,3 +268,129 @@ animation-delay: 0.3s;
 .stroke:nth-child(7){
 animation-delay: 0s;
 }
+
+// Media Queries
+
+@media screen and (max-width: 1250px), screen and (max-height: 600px){
+    .player{
+        position: relative;
+        margin: -10px;
+    }
+    .details{
+        position: absolute;
+    }
+    .track-name{
+        text-align: left;
+    }
+    .wrapper{
+        width: 70%;
+        height: 55%;
+    }
+    .track-art{
+        width: 150px;
+        height: 150px;
+    }
+    .now-playing{
+        font-size: 1rem;
+    }
+    .track-name{
+        font-size: 1.3rem;
+    }
+    .track-artist{
+        font-size: 1rem;
+    }
+   .slide-container{
+        margin-left: 250px;
+   }
+   .buttons{
+        position: absolute;
+        left: 50%;
+        padding-right: 10px;
+   }
+    .repeat-track,
+    .random-track,
+    .playpause-track,
+    .prev-track,
+    .next-track {
+        transition: opacity .2s;
+        padding: 20px 10px 10px 10px;
+        font-weight: 1000;
+    }
+   .loader{
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        right: 12%;
+        }
+    .loader .stroke{
+        background: linear-gradient(to bottom , #e66210, #e6a629);
+        height: 50%;
+        width: 10px;
+        border-radius: 50px;
+        margin: 0 5px;
+        animation: animate 1.4s linear infinite;
+    }
+    
+    @keyframes animate {
+    50% {
+        height: 20%;
+        background: linear-gradient(to bottom, #e66210, #e6a629);
+    }
+    
+    100% {
+        background: linear-gradient(to bottom, #e6a629, #e66210);
+        height: 150%;
+    }
+    }
+   }
+
+
+   @media screen and (max-width: 700px){
+        .wrapper{
+            position: relative;
+            width: 60%;
+            height: 95%;
+        }
+        .now-playing{
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .track-art{
+            width: 100px;
+            height: 100px;
+            margin-top: 120px;
+        }
+        .track-artist{
+            text-align: center;
+        }
+        .track-name{
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .details{
+           left: 20%;
+           right: 20%;
+        }
+       .slide-container{
+            margin-left: 20px;
+            margin-top: 10px;
+       }
+        .seek-slider{
+            width: 140px;
+        }
+        .volume-slider{
+            width: 80px;
+        }
+        .buttons{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            right: 50%;
+        }
+        .loader{
+            position: absolute;
+            bottom: 5%;
+            left: 25%;
+            right: 25%;
+        }
+   }
