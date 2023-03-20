@@ -1,0 +1,110 @@
+@media screen and (max-width: 1250px) and (min-width: 750px){
+    .player{
+        position: relative;
+        margin: -10px;
+    }
+    .details{
+        position: absolute;
+        left: 10%;
+    }
+    .track-name{
+        text-align: left;
+    }
+    .wrapper{
+        width: 70%;
+        height: 55%;
+    }
+    .track-art{
+        width: 150px;
+        height: 150px;
+    }
+    .now-playing{
+        font-size: 1rem;
+    }
+    .track-name{
+        font-size: 1.3rem;
+    }
+    .track-artist{
+        font-size: 1rem;
+    }
+   .slide-container{
+        margin-left: 250px;
+   }
+   .buttons{
+        position: absolute;
+        left: 50%;
+        padding-right: 10px;
+   }
+    .repeat-track,
+    .random-track,
+    .playpause-track,
+    .prev-track,
+    .next-track {
+        transition: opacity .2s;
+        padding: 20px 10px 10px 10px;
+        font-weight: 1000;
+    }
+   .loader{
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        right: 12%;
+        }
+    /* .loader .stroke{
+        background: linear-gradient(to bottom , #e66210, #e6a629);
+        height: 50%;
+        width: 10px;
+        border-radius: 50px;
+        margin: 0 5px;
+        animation: animate 1.4s linear infinite;
+    } */
+}
+
+@media screen and (max-width: 749px){
+    .wrapper{
+        position: relative;
+        width: 70%;
+        height: 95%;
+    }
+    .now-playing{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .track-art{
+        width: 150px;
+        height: 150px;
+    }
+    .track-artist{
+        text-align: center;
+    }
+    .track-name{
+        text-align: center;
+        font-weight: 1500
+    }
+    .details{
+        left: 20%;
+        right: 20%;
+    }
+    .slide-container{
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+    .seek-slider{
+        width: 140px;
+    }
+    .volume-slider{
+        width: 80px;
+    }
+    .buttons{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        right: 50%;
+    }
+    .loader{
+        position: absolute;
+        bottom: 2%;
+        left: 25%;
+        right: 25%;
+    }
+}
