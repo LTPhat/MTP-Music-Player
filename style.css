@@ -26,6 +26,7 @@ body{
     width: 35%;
     height: 98%; 
     position: relative;
+    max-height: 700px;
 }
 
 .details{
@@ -35,7 +36,7 @@ body{
     align-items: center;
 }
 .track-art{
-    margin: 25px;
+    margin: 20px;
     height: 200px;
     width: 200px;
     border: 2px solid #fff;
@@ -224,7 +225,6 @@ cursor: pointer;
   justify-content: center;
   align-items: center;
   margin: 10px auto;
-
 }
 
 .loader .stroke{
