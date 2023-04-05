@@ -61,17 +61,17 @@
         position: relative;
         width: 50%;
         min-width: 300px;
-        height: 60%;
-        max-height: 400px;
+        height: 80%;
+        max-height: 450px;
     }
     .now-playing{
         font-size: 1rem;
         text-align: center;
-        margin-top: -20px;
+        margin-top: -10px;
     }
     .track-art{
-        width: 75px;
-        height: 75px;
+        width: 100px;
+        height: 100px;
     }
     .track-artist{
         text-align: center;
@@ -82,7 +82,7 @@
         font-size: 1.3em;
         text-align: center;
         font-weight: 1500;
-        margin-top: -10px;
+        margin-top: 0px;
     }
     .details{
         left: 20%;
@@ -94,15 +94,13 @@
         margin-top: 0px;
     }
     .current-time, .total-duration{
-        margin-bottom: -10px;
         font-size: 0.8em;
     }
     .seek-slider{
-        width: 140px;
-        margin-bottom: -10px;
+        width: 200px;
     }
     .volume-slider{
-        width: 80px;
+        width: 100px;
     }
     .repeat-track,
     .random-track,
@@ -112,7 +110,7 @@
         transition: opacity .2s;
         padding: 20px 10px 10px 10px;
         font-weight: 1000;
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
     .buttons{
         margin-top: -10px;
