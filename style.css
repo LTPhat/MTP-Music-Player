@@ -107,6 +107,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 2%;
+    font-size: 0.9em;
 }
 
 .repeat-track,
