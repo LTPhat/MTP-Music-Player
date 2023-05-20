@@ -1,4 +1,4 @@
-const music_list = [
+export const music_list = [
     {
         img : 'poster/ATBE.jpg',
         name : 'Âm Thầm Bên Em',

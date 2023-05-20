@@ -126,6 +126,12 @@ const music_list = [
         music : 'music/MuonRoiMaSaoCon-SonTungMTP-7011803.mp3'
     },
     {
+        img : 'poster/MMW.jpg',
+        name : 'Making My Way',
+        artist : 'Sơn Tùng M-TP',
+        music : 'music/making-my-way-son-tung-m-tp.mp3'
+    },
+    {
         img : 'poster/NANQ.jpg',
         name : 'Nắng Ấm Ngang Qua',
         artist : 'Sơn Tùng M-TP',
