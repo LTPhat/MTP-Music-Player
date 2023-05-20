@@ -4,13 +4,12 @@
 - Something I do while learning HTML, CSS and Vanila Javascript.
 
 
-## Some UI design capture images
+## UI captures
+<p align="center">
+  <img src="https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap5.png" alt="Sublime's custom image"/>
+</p>
 
-Muộn Rồi Mà Sao Còn       |  Chúng Ta Của Hiện Tại
-:-------------------------:|:-------------------------:
-![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap1.png)  |![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap2.png)
+<p align="center">
+  <img src="https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap6.png" alt="Sublime's custom image"/>
+</p>
 
-
-Chạy Ngay Đi        |  Có Chắc Yêu Là Đây
-:-------------------------:|:-------------------------:
-![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap4.png)  |![](https://github.com/LTPhat/MTP-Music-Player/blob/main/capture/cap3.png)
