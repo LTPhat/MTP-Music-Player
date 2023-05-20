@@ -153,6 +153,7 @@ body{
     height: 5px;
     background: #83A9FF;
     transition: opacity .2s;
+    margin: 3px;
 }
     
 .seek-slider::-webkit-slider-thumb,
